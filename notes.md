@@ -70,12 +70,98 @@ Interactive [file](c2fi.rb)
 ### 1.5 Summary 33
 
 
+## Chapter 2: Objects, methods and local variables
+
+### 2.1 Talking to objects
+
+#### 2.1.1 Ruby and object orientation
+
+#### 2.1.2 Creating a generic object
+
+All Ruby objects are created with certain innate abilities—certain methods that they know how to execute because they’re Ruby objects.
+
+run [obj.rb](obj.rb):
+
+```ruby
+def obj.talk
+    puts "I am an object"
+end
+```
+
+Now obj knows how to talk, and you can ask it to do so.
+
+```ruby
+obj.talk()
+##=> I am an object
+```
+The dot ( . ) is the message-sending operator.
+
+```ruby 
+receiver.message
+```
+
+the receiver can be an object literal or variable representing an object.
+
+#### 2.1.3 Methods that take arguments
+
+see [file](obj.rb) for code
 
 
 
+#### 2.1.4 The return value of a method
+
+Ruby code is made up of expressions, each of which evaluates to a particular value.Every method call is an expression. The return value of any method is the same as the value of the last expression evaluated during execution of the method. Whether you use return or not, something will be returned from every method call.
 
 
+### 2.2 Crafting an object: The behavior of a ticket
 
+A ticket is a familiar object, with a known set of properties and behaviors. Let’s take a high-level view at what we expect a ticket-like Ruby object to do and to know about itself.
+
+#### 2.2.1 The ticket object, behavior first
+
+##### Creating the ticket object
+
+see the file [ticket.rb](ticket.rb)
+
+Ruby programming is all about asking objects to do things and tell you things.
+
+#### 2.2.3 Shortening the ticket code via string interpolation
+
+see the [file](ticket.rb)
+
+#### 2.2.4 Ticket availability: Expressing Boolean state in a method
+
+The truth value of almost every object in Ruby is true .
+
+### 2.3 The innate behaviors of an object
+
+Every object is “born” with certain innate abilities.
+
+run [innate](innate.rb):
+
+focus is on these three:
+
+- object_id
+- respond_to?
+- send (synonym: __send__ )
+
+### 2.3.1 Identifying objects uniquely with the object_id method
+
+Every object in Ruby has a unique ID number associated with it. You can see an object’s ID by asking the object to show you its object_id.
+
+
+~~~ruby
+string_1 = "Hello"
+string_2 = "Hello"
+puts "string_1's id is #{string_1.object_id}."
+##=> string_1's id is 47095661996100.
+puts "string_2's id is #{string_2.object_id}."
+##=> string_2's id is 47095661996080.
+~~~
+
+"Even though these two strings contain the same text, they aren’t, technically, the sameobject. If you printed them out, you’d see the same result both times ( "Hello" ). But the string objects themselves are different. It’s like having two copies of the same book: they contain the same text, but they aren’t the same thing as each other. You could destroy one, and the other would be unaffected."
+
+### 2.3.2 Querying an object’s abilities with the respond_to? method
 
 
 ## Chapter 12: File and I/O operations
