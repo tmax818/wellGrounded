@@ -31,7 +31,8 @@
 - almost everything in ruby is an object.
 - messages correspond to methods.
 - Objects are represented either by literal constructors—like quotation marks for strings—or by variables to which they’ve been bound.
-- The whole universe of a Ruby program consists of objects and the messages that are sent to them.
+
+>The whole universe of a Ruby program consists of objects and the messages that are sent to them.
 
 #### 1.1.4 Writing and saving a simple program
 
@@ -137,7 +138,7 @@ The truth value of almost every object in Ruby is true .
 
 Every object is “born” with certain innate abilities.
 
-run [innate](innate.rb):
+run [innate](chapter2/innate.rb):
 
 focus is on these three:
 
@@ -163,5 +164,23 @@ puts "string_2's id is #{string_2.object_id}."
 
 ### 2.3.2 Querying an object’s abilities with the respond_to? method
 
+## 2.4 A close look at method arguments
 
-## Chapter 12: File and I/O operations
+[args.rb](chapter2/args.rb)
+
+rake run_args
+
+### 2.5.1 Variables, objects, and references
+
+- This is important: [vor.rb](chapter2/vor.rb)
+
+
+## Chapter 3: Organizing objects with classes
+
+```ruby
+obj = Object.new
+```
+
+`Object` is a built-in Ruby class...classes are objects
+
+Let's define a [Ticket](chapter3/ticket.rb) class.
